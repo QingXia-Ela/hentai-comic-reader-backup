@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CluckRead</title>
+    <link rel="stylesheet" href="./src/semantic/semantic.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body style="padding-top: 70px;">
+    
+    <div class="c-header">
+        <div style="float: left;">
+            <span class="c-header-title noselect">CluckRead</span>
+        </div>
+        <div class="c-header-dropdown">
+
+            <div class="ui floating labeled icon dropdown button" style="margin-right: 10px;">
+                <i class="dropdown icon"></i>
+                <span style="display: inline-block;transition: none;">新增</span>
+                <div class="menu">
+                  <div class="item" onclick="openSet('addNhentai')">
+                    <i class="add icon"></i>
+                    從 Nhentai 新增
+                  </div>
+                </div>
+            </div>
+            <div class="ui floating labeled icon dropdown button">
+                <i class="dropdown icon"></i>
+                <span style="display: inline-block;transition: none;">設定</span>
+                <div class="menu">
+                  <div class="item" onclick="openSet('startXD')">
+                    <i class="wifi icon"></i>
+                    啟用網頁伺服器
+                  </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="app">
+        <div class="ui link cards booklist" id="booklist">
+            <!-- BookList -->
+        </div>
+    </div>
+
+    <!-- Message -->
+    <div class="ui message transition hidden push-info" id="info">
+        <div class="header" id="info_title"></div>
+        <p id="info_text"></p>
+    </div>
+    <!-- Messgae Loading -->
+    <div class="ui icon message transition hidden push-info-loading" id="loading-info">
+        <i class="notched circle loading icon"></i>
+        <div class="content">
+            <div class="header" id="loading-info_title"></div>
+            <p id="loading-info_text"></p>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="ui tiny modal" id="modal">
+        <i class="close icon"></i>
+        <div class="header noselect"></div>
+        <div class="content"></div>
+        <div class="actions">
+          <div class="ui positive right labeled icon button">
+            OK
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+    </div>
+    <!-- Page Loading -->
+    <div class="ui active inverted dimmer" style="background-color: rgba(255,255,255,.95);" id="pageLoading">
+        <div class="ui text loader">Loading...</div>
+    </div>
+    <!-- CopyInput -->
+    <textarea id="copy" style="position: relative;bottom: -100;opacity: 0;overflow: hidden;"></textarea>
+
+    <script src="./src/jquery.min.js"></script>
+    <script src="./src/main.js"></script>
+    <script src="./src/semantic/semantic.min.js"></script>
+    <script src="./src/lazyload.min.js"></script>
+
+    <script>
+        window.addEventListener("load", function(){
+            // Init
+            init();
+            $('.dropdown').dropdown();
+        }, false);
+    </script>
+</body>
+</html>

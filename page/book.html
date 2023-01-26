@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CluckRead</title>
+    <link rel="stylesheet" href="./src/semantic/semantic.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body style="padding-top: 70px;">
+    
+    <div class="c-header">
+        <div style="float: left;">
+            <i class="angle left icon c-header-back" onclick="javascript:window.location='index.html'"></i><span class="c-header-title noselect" style="margin-left: 10px;">CluckRead</span>
+        </div>
+        <div class="c-header-dropdown">
+            <!-- header -->
+        </div>
+    </div>
+
+    <div id="app">
+        <div class="bookinfo">
+            <div class="ui card c-card-info">
+                <div class="image">
+                  <img id="cover">
+                </div>
+            </div>
+            <div class="c-info-info">
+                <h1 id="bookname"></h1>
+                <p style="color: #2b2b2b;font-size: 125%;" id="author"></p>
+                <div class="c-info-text" id="tags">
+                    標籤: 
+                </div>
+                <div class="c-info-text" id="addtime">
+                    添加時間: 
+                </div>
+                <div class="c-info-text">
+                    頁數: <div class="ui label booktag" id="pagenum"></div>
+                </div>
+            </div>
+            <div class="read-button">
+                <button class="big ui button" onclick="javascript:window.location=`read.html?bid=${getQueryVariable('bid')}`">開始閱讀</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Message -->
+    <div class="ui message transition hidden push-info" id="info">
+        <div class="header" id="info_title"></div>
+        <p id="info_text"></p>
+    </div>
+    <!-- Modal -->
+    <div class="ui tiny modal" id="modal">
+        <i class="close icon"></i>
+        <div class="header noselect"></div>
+        <div class="content"></div>
+        <div class="actions">
+          <div class="ui positive right labeled icon button">
+            OK
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+    </div>
+    <!-- Page Loading -->
+    <div class="ui active inverted dimmer" style="background-color: rgba(255,255,255,.95);" id="pageLoading">
+        <div class="ui text loader">Loading...</div>
+    </div>
+
+    <script src="./src/jquery.min.js"></script>
+    <script src="./src/main.js"></script>
+    <script src="./src/semantic/semantic.min.js"></script>
+    <script src="./src/lazyload.min.js"></script>
+
+    <script>
+        window.addEventListener("load", function(){
+            // Init
+            bookinfo_init();
+            // $('.dropdown').dropdown();
+        }, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "hentai-comic-reader",
+  "version": "1.0.0",
+  "description": "Hentai 漫畫閱讀器",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cluckbird/hentai-comic-reader.git"
+  },
+  "author": "cluckbird",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.10",
+    "connect-multiparty": "^2.2.0",
+    "electron": "^13.1.8",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "sqlite3": "^5.0.2",
+    "superagent": "^6.1.0"
+  }
+}

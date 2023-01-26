@@ -1,0 +1,128 @@
+html, body {
+    background-color: #f6f8f8;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.noselect{
+    user-select: none;
+}
+.pointer{
+    cursor: pointer;
+}
+.push-info{
+    position: fixed !important;
+    bottom: 30px;
+    left: 2%;
+    width: 35% !important;
+    z-index: 90000;
+}
+.push-info-loading{
+    position: fixed !important;
+    bottom: 30px;
+    width: 35% !important;
+    z-index: 80000;
+    right: 2%;
+}
+/* Home */
+.c-header{
+    height: 70px;
+    width: 100%;
+    line-height: 70px;
+    background-color: #f6f8f8;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+}
+.c-header-title {
+    font-size: 140%;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.c-header-dropdown{
+    margin-right: 20px;
+    float: right;
+}
+#app{
+    width: 100%;
+    user-select: none;
+}
+.c-card{
+    float: left !important;
+    display: unset !important;
+    width: 220px !important;
+}
+@media screen and (max-width: 530px) {
+    .c-card{
+        width: 45% !important;
+    }
+}
+.booklist{
+    padding: 20px 5% 40px 5%;
+    justify-content: center;
+}
+.book-title{
+    font-size: 105% !important;
+}
+.booktag{
+    margin: 2px !important;
+}
+.c-header-back{
+    margin-left: 20px !important;
+    font-size: 130% !important;
+    cursor: pointer;
+}
+.bookinfo{
+    margin: 20px 40px 20px 40px;
+}
+.c-card-info{
+    float: left !important;
+    display: unset !important;
+}
+.c-info-info{
+    margin-left: 40px;
+    float: left;
+    width: calc(100% - 340px);
+}
+.c-info-text{
+    margin-top: 5px;
+}
+.read-button{
+    float: left;
+    margin-top: 20px !important;
+    margin-left: 40px !important;
+}
+@media screen and (max-width: 550px) {
+    .c-card-info{
+        width: 100% !important;
+    }
+    .c-info-info{
+        margin-top: 20px;
+        margin-left: unset;
+        float: left;
+        width: 100%;
+    }
+    #bookname{
+        font-size: 150%;
+    }
+    .read-button{
+        margin-left: unset !important;
+        padding-bottom: 40px;
+    }
+}
+.bookpic{
+    width: 30%;
+    margin-left: 35%;
+}
+@media screen and (max-width: 875px) {
+    .bookpic{
+        width: 60%;
+        margin-left: 20%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .bookpic{
+        width: 100%;
+        margin-left: 0%;
+    }
+}

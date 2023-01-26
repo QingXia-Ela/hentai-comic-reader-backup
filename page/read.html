@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CluckRead</title>
+    <link rel="stylesheet" href="./src/semantic/semantic.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body style="padding-top: 70px;">
+    
+    <div class="c-header">
+        <div style="float: left;">
+            <i class="angle left icon c-header-back" onclick="javascript:window.history.back();"></i><span class="c-header-title noselect" style="margin-left: 10px;">CluckRead</span>
+        </div>
+        <div class="c-header-dropdown">
+            <!-- header -->
+        </div>
+    </div>
+
+    <div id="readlist"></div>
+
+
+    <!-- Page Loading -->
+    <div class="ui active inverted dimmer" style="background-color: rgba(255,255,255,.95);" id="pageLoading">
+        <div class="ui text loader">Loading...</div>
+    </div>
+
+    <script src="./src/jquery.min.js"></script>
+    <script src="./src/main.js"></script>
+    <script src="./src/semantic/semantic.min.js"></script>
+    <script src="./src/lazyload.min.js"></script>
+
+    <script>
+        window.addEventListener("load", function(){
+            // Init
+            read_init();
+            // $('.dropdown').dropdown();
+        }, false);
+
+        function read_init(){
+            let bid = getQueryVariable('bid');
+            $.ajax({
+                url: API_host+"/api/getBookRead",
+                type: "POST",
+                data: {"bid": bid},
+                success: function(re){
+                    let readlist = document.getElementById("readlist");
+                    for (let i=1;i<=re['len'];i++){
+                        readlist.innerHTML+=`<img class="bookpic" data-original="../server/book/db/${bid}/${i}.${re[i]}">`
+                    }
+                    $("img").lazyload({effect: "fadeIn"});
+                    pageLoading(false);
+                }
+            })
+        }
+    </script>
+</body>
+</html>
